@@ -6,5 +6,5 @@ import tailwindcss from '@tailwindcss/vite';
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/Vite-Template/', // Замініть на назву вашого репозиторію
+  base: '/Timelytics/', // Замініть на назву вашого репозиторію
 });
