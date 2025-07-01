@@ -1,12 +1,20 @@
-// import reactLogo from './assets/react.svg';
-// import viteLogo from '/vite.svg';
-import './App.css';
+import React, { useState } from 'react';
+import MainLayout from './layouts/MAinLayout';
+import TaskForm from './components/TaskForm';
+import ActiveTask from './components/ActiveTask';
 
 function App() {
+  const [activeTask, setActiveTask] = useState(null);
+
+  const handleTaskStart = (task) => {
+    setActiveTask(task);
+  };
+
   return (
-    <>
-      <h1 class='text-3xl font-bold underline'>Hello world!</h1>
-    </>
+    <MainLayout>
+      <TaskForm onTaskStart={handleTaskStart} />
+      {activeTask && <ActiveTask task={activeTask} />}
+    </MainLayout>
   );
 }
 
