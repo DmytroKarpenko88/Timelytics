@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { formatTime } from '../utilites/formatTime';
+import { formatDuration } from '../utilites/formatTime';
 
 const ActiveTask = ({ task }) => {
   const [elapsed, setElapsed] = useState(() =>
@@ -20,7 +20,7 @@ const ActiveTask = ({ task }) => {
       <h2 className='text-xl font-semibold text-blue-800'>{task.name}</h2>
       <p className='text-sm text-gray-500 mb-2'>{task.category}</p>
       <div className='text-3xl font-mono text-blue-900'>
-        {formatTime(elapsed)}
+        {formatDuration(elapsed)}
       </div>
     </div>
   );

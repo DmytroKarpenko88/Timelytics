@@ -3,12 +3,14 @@ import MainLayout from './layouts/MAinLayout';
 import TaskForm from './components/TaskForm';
 import ActiveTask from './components/ActiveTask';
 import CompletedTasks from './components/CompletedTasks';
+import { useTasks } from './hooks/useTasks';
 
 function App() {
+  const { completedTasks, addCompletedTask, clearCompletedTask } = useTasks();
   const [activeTask, setActiveTask] = useState(null);
-  const [completedTasks, setCompletedTasks] = useState([]);
 
   const handleTaskStart = (task) => {
+    console.log(' task:', task);
     setActiveTask(task);
   };
 
@@ -23,8 +25,9 @@ function App() {
       endTime: finishedAt,
       duration: durationSec,
     };
+    console.log(' completedTask:', completedTask);
 
-    setCompletedTasks((prev) => [completedTask, ...prev]);
+    addCompletedTask(completedTask);
     setActiveTask(null);
   };
 

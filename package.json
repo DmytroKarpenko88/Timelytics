@@ -1,5 +1,5 @@
 {
-  "name": "my-react-app",
+  "name": "timelytics",
   "homepage": "https://dmytrokarpenko88.github.io/Timelytics",
   "private": true,
   "version": "0.0.0",
@@ -14,6 +14,7 @@
   },
   "dependencies": {
     "@tailwindcss/vite": "^4.1.11",
+    "nanoid": "^5.1.5",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwindcss": "^4.1.11"
